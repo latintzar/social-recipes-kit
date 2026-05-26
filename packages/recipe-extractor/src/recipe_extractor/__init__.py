@@ -31,6 +31,13 @@ from .instagram_cdn import (
     resolve_ig_share_url_from_message_mid,
     public_instagram_url_from_message_graph_response,
 )
+from .instagram_webhook import (
+    verify_subscription,
+    verify_signature,
+    iter_messaging_events,
+    send_message,
+    make_router,
+)
 
 __all__ = [
     "extract_recipe",
@@ -48,6 +55,11 @@ __all__ = [
     "resolve_ig_reel_video_id_to_permalink",
     "resolve_ig_share_url_from_message_mid",
     "public_instagram_url_from_message_graph_response",
+    "verify_subscription",
+    "verify_signature",
+    "iter_messaging_events",
+    "send_message",
+    "make_router",
 ]
 
 __version__ = "0.1.0"

@@ -77,23 +77,55 @@ Every ingredient is normalised into three fields so downstream matching is easy:
 }
 ```
 
-## The Instagram DM-share flow
+## The Instagram Messages API flow (share a reel → recipe)
 
-If you want users to *share a reel into your Instagram DMs* and have it ingested,
-set `INSTAGRAM_PAGE_ACCESS_TOKEN` and use `instagram_cdn.py`:
+Let people **share a reel into your Instagram DM inbox** and have it ingested
+automatically. Two ways in:
+
+**A. Drop-in webhook (FastAPI).** `make_router` implements the full Meta
+connection — GET verify handshake, `X-Hub-Signature-256` HMAC check, payload
+normalization, reel resolution, and an optional auto-reply — and runs each
+shared reel through `extract_recipe`:
 
 ```python
-from recipe_extractor import resolve_ig_share_url_from_message_mid, extract_recipe
+from fastapi import FastAPI
+from recipe_extractor import make_router
 
-# `mid` comes from your Instagram Messaging webhook payload
-public_url = resolve_ig_share_url_from_message_mid(mid)
-if public_url:
-    result = extract_recipe(public_url)
+app = FastAPI()
+
+def on_reel(sender_id, result):
+    save_to_my_db(sender_id, result)         # your storage
+    return f"Saved {result['recipe']['title']} ✅"   # DM'd back to the sender
+
+app.include_router(make_router(on_reel=on_reel))
+# exposes GET/POST /instagram/webhook
 ```
 
-`lookaside.fbsbx.com/ig_messaging_cdn?asset_id=…` links are also accepted
-directly by `extract_recipe` — they serve the MP4 straight, so we stream them
-even though yt-dlp can't. See the root README for *why* this works.
+Set `INSTAGRAM_VERIFY_TOKEN`, `INSTAGRAM_APP_SECRET`, and
+`INSTAGRAM_PAGE_ACCESS_TOKEN`, then point your Meta app's Messaging webhook
+(subscribed to `messages`) at `…/instagram/webhook`.
+
+**B. Bring your own server.** Use the framework-agnostic helpers directly:
+
+```python
+from recipe_extractor import (
+    verify_subscription, verify_signature, iter_messaging_events,
+    send_message, extract_recipe,
+)
+
+# GET handshake -> echo verify_subscription(mode, token, challenge)
+# POST: verify_signature(header, raw_body), then:
+for msg in iter_messaging_events(json_payload):
+    if msg["reel_url"] and not msg["is_echo"]:
+        result = extract_recipe(msg["reel_url"])   # reel_url already resolved
+        send_message(msg["sender_id"], f"Saved {result['recipe']['title']}")
+```
+
+`iter_messaging_events` does the hard part: it resolves an `ig_reel` attachment
+(via the Graph media node) or a message `mid` (via its `shares` object) into an
+extractable `reel_url`. `lookaside.fbsbx.com/ig_messaging_cdn?asset_id=…` links
+and pasted permalinks are also accepted directly by `extract_recipe`. See the
+root README for *why* the lookaside trick works.
 
 ## Config
 

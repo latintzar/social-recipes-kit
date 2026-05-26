@@ -82,6 +82,11 @@ and [`extract.py`](packages/recipe-extractor/src/recipe_extractor/extract.py)):
 Net result: a user DMs you a reel and it becomes a structured, replayable recipe
 — no copy-paste, no "open in Instagram."
 
+The whole inbound connection (verify handshake, signature check, payload
+normalization, reel resolution, auto-reply) is turnkey via `make_router` — see
+[`instagram_webhook.py`](packages/recipe-extractor/src/recipe_extractor/instagram_webhook.py)
+and the [package README](packages/recipe-extractor/README.md#the-instagram-messages-api-flow-share-a-reel--recipe).
+
 ---
 
 ## Quick start
