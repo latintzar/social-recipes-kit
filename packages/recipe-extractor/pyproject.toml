@@ -28,7 +28,8 @@ recipe-extractor = "recipe_extractor.extract:main"
 recipe-extractor-serve = "recipe_extractor.service:run"
 
 [project.urls]
-Homepage = "https://github.com/USER/recipe-kit"
+Homepage = "https://github.com/latintzar/social-recipes-kit"
+Repository = "https://github.com/latintzar/social-recipes-kit"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/recipe_extractor"]

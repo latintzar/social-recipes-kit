@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "description": "React player that plays your self-hosted recipe MP4 natively (with a TikTok/Instagram/YouTube iframe fallback).",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latintzar/social-recipes-kit.git"
+  },
+  "homepage": "https://github.com/latintzar/social-recipes-kit#readme",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
