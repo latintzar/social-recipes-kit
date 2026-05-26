@@ -1,114 +1,112 @@
 # recipe-kit
 
-Turn a TikTok / Instagram / YouTube / Facebook cooking video into a **structured
-recipe** and a **video that actually plays in your own app** — even when the clip
-has no caption, no transcript, and no public permalink.
+Turn a TikTok / Instagram / YouTube cooking video into a **recipe you can use as
+data** (ingredients, steps, quantities) — plus a copy of the **video that
+actually plays in your own app**. It even works on videos that have no caption
+and no subtitles, because it *watches* the video instead of reading the text.
 
-This is extracted from a production system that ingests recipe videos every
-night and lets people share reels into a DM inbox. Two installable packages:
-
-| Package | Lang | What it does |
-|---|---|---|
-| [`recipe-extractor`](packages/recipe-extractor) | Python (PyPI) | URL → structured recipe JSON + a persisted, natively-playable MP4. Includes the Instagram-DM CDN crack. |
-| [`recipe-video-player`](packages/recipe-video-player) | TS/React (npm) | Plays your self-hosted MP4 natively, with a platform-iframe fallback. |
-
-The extractor is a small CLI/HTTP service, so it doesn't matter what your app is
-written in — call it over HTTP and you get JSON back.
+This is real, battle-tested code pulled out of a live app. You don't have to use
+all of it.
 
 ---
 
-## The method (why this is better than "just embed the reel")
+## Pick only the parts you want
 
-### 1. Read the video, not the caption
+recipe-kit is **three separate pieces**. Use one, two, or all three — they don't
+depend on each other (except #3, which uses #1 under the hood). Mix and match
+based on what you're building.
 
-Most recipe scrapers read the description text. Half of cooking videos have a
-useless caption ("link in bio 🔥") and no transcript. So instead we **watch the
-video**:
+### 🥄 Part 1 — Get a recipe out of a video
+**What it does:** you give it a video link (TikTok, Instagram reel, YouTube,
+etc.), and it gives you back the recipe as structured data — title, ingredients
+with quantities, step-by-step directions — *and* downloads the video file so you
+can show it later.
+**Use this if:** you want to save/parse recipes from social videos. This is the
+core. Most people want at least this.
+**You need:** one API key for an AI model (a few minutes to get — see *Start
+here* below). The code is Python, but you can run it as a little web service and
+call it from an app in **any** language.
 
-- `ffmpeg` samples frames at **scene cuts**, not at fixed intervals. The cut
-  where the chef pulls the tray out of the oven, the on-screen ingredient card,
-  the final plated shot — those are exactly the frames that carry recipe
-  information, and scene-change detection (`select='gt(scene,0.3)'`) keeps them
-  by definition. We always pin the first and last frame, then bracket the count
-  between a floor and a cap so the LLM bill is predictable.
-- Those frames go to a **vision LLM** with a strict JSON schema. No caption
-  needed; it reads the cooking.
+### ▶️ Part 2 — Play the saved video in a React app
+**What it does:** a ready-made React component that plays the video copy from
+Part 1 smoothly. (Embedding TikTok/Instagram directly is unreliable — videos
+won't autoplay, or the wrong clip shows up. This avoids all that.)
+**Use this if:** your app is built with React (or React Native) and you want the
+video to just work.
+**You need:** a React app. Nothing else. You can even use this on its own if you
+already have video URLs from somewhere.
 
-The prompt enforces ingredient discipline that pays off downstream: each
-ingredient is split into a `canonical` single noun ("tomato"), a separate `prep`
-note ("diced"), and a best-effort `quantity_g`. Combination ingredients ("pico
-de gallo") are decomposed into buyable components. You get clean, normalised
-rows whether or not you ever do shop-matching.
+### 📩 Part 3 — Let people send you a reel on Instagram
+**What it does:** connects to Instagram so that when someone **shares a reel into
+your Instagram DMs**, it automatically runs Part 1 and (optionally) replies to
+them. No copy-pasting links.
+**Use this if:** you want a social "DM us a recipe" feature.
+**You need:** an Instagram/Meta developer account and a bit of one-time setup
+(this part is the most involved — see [`INSTAGRAM_SETUP.md`](INSTAGRAM_SETUP.md)).
+**This part is optional and off by default** — if you skip it, Parts 1 and 2
+work completely on their own.
 
-### 2. Self-host the video so it plays
+| | Part 1 (extract) | Part 2 (player) | Part 3 (Instagram) |
+|---|---|---|---|
+| **Language** | Python | React / TypeScript | Python |
+| **Needs** | 1 AI API key | a React app | a Meta app (fiddly) |
+| **Works alone?** | ✅ yes | ✅ yes | builds on Part 1 |
 
-Platform embeds are hostile:
-
-- **iOS Safari** refuses cross-origin iframe autoplay no matter what `allow`
-  attributes you set.
-- **TikTok's** embed silently swaps in a random "For You" clip when the original
-  can't autoplay — your user asked for carbonara and gets a stranger's roast.
-- **Instagram's** embed disables autoplay entirely and forces a tap-through.
-
-So we download the MP4 once at extraction time and serve it ourselves. The
-React player renders a plain `<video autoplay muted playsinline loop>` — which
-works everywhere — and only falls back to the platform iframe if the local file
-is missing.
-
-### 3. The Instagram CDN crack (the social "send us a reel" path)
-
-This is the part that's genuinely hard. When someone **shares a reel into your
-Instagram DM inbox**, the webhook does *not* give you `instagram.com/reel/…`.
-You get one of:
-
-- a `lookaside.fbsbx.com/ig_messaging_cdn?asset_id=…` link, **or**
-- a message id you have to expand.
-
-Two findings that make this work (both encoded in
-[`instagram_cdn.py`](packages/recipe-extractor/src/recipe_extractor/instagram_cdn.py)
-and [`extract.py`](packages/recipe-extractor/src/recipe_extractor/extract.py)):
-
-1. **The `lookaside` CDN URL serves the raw MP4 directly** — `Content-Type:
-   video/mp4`, no redirect, no HTML. yt-dlp has no extractor for it, so we
-   stream it ourselves with httpx and an iOS user-agent. (Meanwhile
-   `cdninstagram.com` / `fbcdn.net` URLs are session-bound and 403 server-side —
-   we detect and reject those early instead of hanging.)
-2. **Message `shares` objects use `link`, not `url`.** Requesting
-   `fields=shares{url}` makes Graph *omit the field entirely*. You must request
-   `shares{link,url,type,…}` and read both. If the share is a CDN link, resolve
-   its `asset_id` via `GET /{asset_id}?fields=permalink,shortcode` to recover a
-   public permalink yt-dlp can then handle.
-
-Net result: a user DMs you a reel and it becomes a structured, replayable recipe
-— no copy-paste, no "open in Instagram."
-
-The whole inbound connection (verify handshake, signature check, payload
-normalization, reel resolution, auto-reply) is turnkey via `make_router` — see
-[`instagram_webhook.py`](packages/recipe-extractor/src/recipe_extractor/instagram_webhook.py)
-and the [package README](packages/recipe-extractor/README.md#the-instagram-messages-api-flow-share-a-reel--recipe).
+> **You use Claude Code?** Easiest path: open this repo in Claude Code and say
+> *"set up Part 1 of recipe-kit for me."* Everything here is written so your
+> agent can follow it. The steps below are the same ones it'll do.
 
 ---
 
-## Quick start
+## Start here (Part 1, the 5-minute version)
+
+You only do **two** manual things: install one program, and get one key.
+
+**1. Install ffmpeg** (this is the only thing pip can't install for you — it's
+the tool that reads the video). Pick your system:
+
+- **Mac:** `brew install ffmpeg`
+- **Ubuntu / Debian Linux:** `sudo apt install ffmpeg`
+- **Windows:** download from <https://ffmpeg.org/download.html> (or `winget install ffmpeg`)
+
+**2. Get an AI API key.** Go to <https://openrouter.ai/keys>, sign in, and create
+a key. It starts with `sk-or-`. (OpenRouter lets you use lots of AI models with
+one key. You can swap in OpenAI or others later — see the package README.)
+
+**3. Install and run it:**
 
 ```bash
-# 1. extractor (Python)
+# from inside this repo
 cd packages/recipe-extractor
-cp .env.example .env          # set OPENROUTER_API_KEY at minimum
-pip install -e ".[service]"   # needs yt-dlp + ffmpeg on PATH
+pip install -e .
 
-# one-shot CLI
+# tell it your key (paste your real key after the =)
+export OPENROUTER_API_KEY=sk-or-...
+
+# try it on any cooking video
 recipe-extractor "https://www.tiktok.com/@user/video/123"
-
-# or run it as a service your app calls
-recipe-extractor-serve        # POST /extract {"url": "..."}  ->  recipe JSON
-                              # GET  /videos/<id>.mp4         ->  the MP4
 ```
 
+You'll see the recipe printed out, and the video saved into a `recipe_output/`
+folder. That's it — Part 1 works.
+
+**To call it from your own app instead**, run it as a tiny web service:
+
 ```bash
-# 2. player (React)
-cd packages/recipe-video-player
-npm install && npm run build
+pip install -e ".[service]"
+recipe-extractor-serve         # now running at http://127.0.0.1:8000
+```
+
+Then from anywhere: `POST http://127.0.0.1:8000/extract` with `{"url": "..."}`
+gives you the recipe as JSON, and `GET /videos/<id>.mp4` is the playable video.
+
+Full Part 1 options (changing the AI model, using your own storage, etc.) are in
+the [recipe-extractor README](packages/recipe-extractor/README.md).
+
+## Adding Part 2 (the React player)
+
+```bash
+npm install recipe-video-player
 ```
 
 ```tsx
@@ -118,21 +116,65 @@ import { RecipeVideoPlayer } from 'recipe-video-player';
   source="TikTok"
   sourceUrl={recipe.source_url}
   sourceId={recipe.source_id}
-  videoUrl={`${API}/videos/${recipe.id}.mp4`}  // your self-hosted MP4
+  videoUrl={`${API}/videos/${recipe.id}.mp4`}  // the saved video from Part 1
   posterUrl={posterUrl}
 />
 ```
 
-See [`examples/extract_one.py`](examples/extract_one.py) for an end-to-end run.
+Details and styling: [recipe-video-player README](packages/recipe-video-player/README.md).
 
-## Requirements
+## Adding Part 3 (Instagram DM shares)
 
-- Python 3.10+, with **`yt-dlp`** and **`ffmpeg`** on PATH.
-- An OpenAI-compatible **vision** LLM key (OpenRouter by default — swap the
-  endpoint/model via env to use OpenAI, Groq, etc).
-- For the DM-share flow only: a Meta Graph API token
-  (`INSTAGRAM_PAGE_ACCESS_TOKEN`).
+This one needs a Meta developer app and some dashboard clicking. It's all in a
+dedicated, step-by-step guide: **[`INSTAGRAM_SETUP.md`](INSTAGRAM_SETUP.md)**.
+Once set up, wiring it in is a few lines (see the
+[package README](packages/recipe-extractor/README.md#the-instagram-messages-api-flow-share-a-reel--recipe)).
+
+---
+
+## How it actually works (for the curious)
+
+You don't need this section to use the kit — but here's why it's good.
+
+### It reads the video, not the caption
+Most recipe scrapers read the text description. Half of cooking videos have a
+useless caption ("link in bio 🔥") and no subtitles. So instead this *watches*
+the video: `ffmpeg` grabs the frames at the visually important moments (the cut
+where the tray comes out of the oven, the on-screen ingredient list, the final
+plated dish), and an AI vision model reads the cooking from those frames. No
+caption needed. Each ingredient comes back cleanly split into a plain name
+("tomato"), a prep note ("diced"), and a gram estimate — handy whether or not
+you do anything fancy with it.
+
+### It saves the video so it actually plays
+Embedding TikTok/Instagram directly is hostile: iPhones block autoplay, TikTok
+sometimes shows a *random* clip instead of the one you wanted, Instagram forces a
+tap-through. So the kit downloads the video once and serves it from your side,
+and the React player just plays a normal video file — which works everywhere.
+
+### The Instagram "share a reel" trick (the clever bit)
+When someone shares a reel into your Instagram DMs, Instagram does **not** hand
+you a normal link. Figuring out how to turn that DM into a downloadable video
+took real work — two non-obvious findings make it possible, both baked into
+[`instagram_cdn.py`](packages/recipe-extractor/src/recipe_extractor/instagram_cdn.py)
+and [`instagram_webhook.py`](packages/recipe-extractor/src/recipe_extractor/instagram_webhook.py).
+The whole connection (verification, security check, finding the reel, replying)
+is turnkey via one function, `make_router`.
+
+---
+
+## What's in the box
+
+```
+recipe-kit/
+├── packages/
+│   ├── recipe-extractor/      Part 1 + Part 3 (Python)
+│   └── recipe-video-player/   Part 2 (React/TypeScript)
+├── examples/extract_one.py    a tiny runnable demo
+├── INSTAGRAM_SETUP.md         step-by-step Meta setup for Part 3
+└── README.md                  you are here
+```
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — use it however you like. See [LICENSE](LICENSE).
