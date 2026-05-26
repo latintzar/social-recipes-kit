@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" fill="none" role="img" aria-label="Social Recipes Kit">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#13181f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(1040 70) rotate(130) scale(420)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff7a18" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#ff3d77" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ff3d77" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="120" y1="0" x2="520" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff7a18"/>
+      <stop offset="1" stop-color="#ff3d77"/>
+    </linearGradient>
+    <linearGradient id="play" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ff9a3d"/>
+      <stop offset="1" stop-color="#ff3d77"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="360" rx="16" fill="url(#bg)"/>
+  <rect width="1280" height="360" rx="16" fill="url(#glow)"/>
+
+  <!-- subtle dot grid -->
+  <g fill="#ffffff" opacity="0.04">
+    <circle cx="120" cy="300" r="2"/><circle cx="160" cy="300" r="2"/><circle cx="200" cy="300" r="2"/>
+    <circle cx="120" cy="330" r="2"/><circle cx="160" cy="330" r="2"/><circle cx="200" cy="330" r="2"/>
+    <circle cx="240" cy="300" r="2"/><circle cx="240" cy="330" r="2"/>
+  </g>
+
+  <!-- play glyph -->
+  <g transform="translate(120 96)">
+    <rect width="96" height="96" rx="24" fill="url(#play)"/>
+    <path d="M40 30 L70 48 L40 66 Z" fill="#0d1117"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="244" y="138" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="74" font-weight="800" fill="#f3f5f7" letter-spacing="-1.5">Social Recipes Kit</text>
+  <rect x="246" y="158" width="300" height="6" rx="3" fill="url(#accent)"/>
+
+  <!-- tagline -->
+  <text x="246" y="214" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="500" fill="#9da7b3">Any cooking video → a structured recipe + a video that actually plays.</text>
+
+  <!-- source chips -->
+  <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" fill="#c9d1d9">
+    <g transform="translate(246 250)">
+      <rect width="120" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="60" y="26" text-anchor="middle">TikTok</text>
+    </g>
+    <g transform="translate(378 250)">
+      <rect width="148" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="74" y="26" text-anchor="middle">Instagram</text>
+    </g>
+    <g transform="translate(538 250)">
+      <rect width="130" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="65" y="26" text-anchor="middle">YouTube</text>
+    </g>
+  </g>
+</svg>
