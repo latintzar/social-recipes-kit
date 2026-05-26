@@ -1,0 +1,37 @@
+{
+  "name": "recipe-video-player",
+  "version": "0.1.0",
+  "description": "React player that plays your self-hosted recipe MP4 natively (with a TikTok/Instagram/YouTube iframe fallback).",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "keywords": [
+    "recipe",
+    "video",
+    "tiktok",
+    "instagram",
+    "react",
+    "player"
+  ],
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.4.0"
+  }
+}

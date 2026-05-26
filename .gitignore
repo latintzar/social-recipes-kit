@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.local
+*.pem
+
+# Extractor output (downloaded videos, frames, run artifacts)
+recipe_output/
+**/videos/
+**/thumbnails/
+**/runs/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Node
+node_modules/
+packages/recipe-video-player/dist/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
