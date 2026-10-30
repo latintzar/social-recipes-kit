@@ -6,7 +6,7 @@ Social Recipes is a toolkit for turning cooking videos into structured recipes a
 
 [Website](https://atelierneyra.com/social-recipes) · [Documentation](https://docs.atelierneyra.com/social-recipes/overview/) · [MIT license](LICENSE)
 
-![Social Recipes](https://atelierneyra.com/assets/product-shots-20261030/social-recipes.jpg)
+![Social Recipes](https://atelierneyra.com/assets/product-motion-v3/social-recipes.jpg)
 
 ## Three modules
 
