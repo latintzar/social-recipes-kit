@@ -1,12 +1,16 @@
 # Social Recipes
 
-Extract recipes and video from social Reels
+An Instagram agent runtime that turns Reels into recipes
+
+Social Recipes is an Instagram agent runtime that turns shared Reels into recipes. It resolves the underlying video, extracts ingredients and instructions, and replies with the recipe in chat. The reusable source preserves its webhook, CDN resolver, extractor and timed video player.
+
+The published kit preserves the Instagram webhook and reply helpers, CDN resolver, recipe extractor and timed player. Running the Instagram flow uses an operator-owned Meta app and vision provider. The preview illustrates the conversation; the separate original agent runtime is being reconciled with the published components.
 
 Social Recipes is a toolkit for turning cooking videos into structured recipes and playable video files. Give it a TikTok, Instagram, YouTube or Facebook video URL; the extractor downloads the video, samples frames and asks a vision model for ingredients and directions. The saved video can be played in your own app.
 
 [Website](https://atelierneyra.com/social-recipes) · [Documentation](https://docs.atelierneyra.com/social-recipes/overview/) · [MIT license](LICENSE)
 
-![Social Recipes](https://atelierneyra.com/assets/product-motion-v3/social-recipes.jpg)
+![Social Recipes](https://atelierneyra.com/assets/product-motion-v4/social-recipes.jpg)
 
 ## Three modules
 
