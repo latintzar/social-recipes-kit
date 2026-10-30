@@ -1,8 +1,12 @@
 # Social Recipes
 
+Extract recipes and video from social Reels
+
 Social Recipes is a toolkit for turning cooking videos into structured recipes and playable video files. Give it a TikTok, Instagram, YouTube or Facebook video URL; the extractor downloads the video, samples frames and asks a vision model for ingredients and directions. The saved video can be played in your own app.
 
 [Website](https://atelierneyra.com/social-recipes) · [Documentation](https://docs.atelierneyra.com/social-recipes/overview/) · [MIT license](LICENSE)
+
+![Social Recipes](https://atelierneyra.com/assets/product-shots-20261030/social-recipes.jpg)
 
 ## Three modules
 
