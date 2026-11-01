@@ -32,6 +32,8 @@ Platform response formats, permissions, signed URLs and download behavior change
 
 This is a reusable source kit with a CLI, a service, a React player and Instagram webhook integration. A vision API key and `ffmpeg` are needed for recipe extraction; Instagram DM sharing also needs a configured Meta app and account. Next, run the extractor with a video you can access, review its output, and connect the player or webhook to your application as needed.
 
+[Set up with your agent](docs/AGENT-SETUP.md).
+
 ## Install and extract
 
 Install Python 3.10+, `ffmpeg` and an OpenAI-compatible vision API key. The default endpoint is OpenRouter.
