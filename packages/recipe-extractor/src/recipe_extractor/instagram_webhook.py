@@ -29,8 +29,6 @@ webhook to ``messages``, point the callback URL at ``…/instagram/webhook`` and
 use the same value for the verify token field and ``INSTAGRAM_VERIFY_TOKEN``.
 """
 
-from __future__ import annotations
-
 import hashlib
 import hmac
 import json
@@ -80,13 +78,12 @@ def verify_subscription(mode: str | None, token: str | None, challenge: str | No
 def verify_signature(header: str | None, raw_body: bytes) -> bool:
     """Verify ``X-Hub-Signature-256: sha256=<hmac>`` against ``INSTAGRAM_APP_SECRET``.
 
-    Skips verification (with a warning) when the secret is unset so local dev
-    works without creds. Production MUST set the secret.
+    Accepts a payload only when the configured app secret verifies its signature.
     """
     secret = os.getenv("INSTAGRAM_APP_SECRET")
     if not secret:
-        logger.warning("ig_webhook: INSTAGRAM_APP_SECRET unset — skipping HMAC check (dev only)")
-        return True
+        logger.error("ig_webhook: INSTAGRAM_APP_SECRET is required for signed delivery")
+        return False
     if not header or not header.startswith("sha256="):
         logger.warning("ig_webhook: missing/malformed x-hub-signature-256")
         return False
@@ -276,6 +273,8 @@ def make_router(
 
     @router.post(path)
     async def webhook(request: Request):  # noqa: ANN202
+        if not os.getenv("INSTAGRAM_APP_SECRET"):
+            return JSONResponse({"error": "configuration_required"}, status_code=503)
         raw = await request.body()
         if not verify_signature(request.headers.get("x-hub-signature-256"), raw):
             return JSONResponse({"error": "bad_signature"}, status_code=403)
