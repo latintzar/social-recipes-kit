@@ -4,6 +4,12 @@ Social Recipes is the Instagram recipe-agent layer: shared Reel → resolved vid
 
 [Website](https://atelierneyra.com/social-recipes) · [First extraction and account setup](AGENT-SETUP.md)
 
+## The Instagram agent
+
+A person shares a cooking Reel, receives its ingredients and steps in the same chat, then asks follow-up questions. The original queue combines rapid messages from that sender, the thread store restores their history, and Hermes chooses the recipe extraction tool. The reply adapter sends complete bubbles as the turn progresses. [Run your own agent](agent-runtime.md).
+
+[The source map](original-runtime.md) links transport, turn engine, session ownership, recipe tools and the preserved broader shopper skill. [Runtime boundaries](runtime-security.md) explains the recipe-only entry, current prototype stage and connection checks with your own accounts.
+
 ## One video to a usable recipe
 
 Choose a cooking video your account can access. After [private vision configuration](AGENT-SETUP.md#extract-one-recipe), run the extractor against that URL. It downloads the media, samples scene frames with FFmpeg and sends those frames to the selected vision model.
@@ -31,7 +37,7 @@ A connected deployment mounts `make_router` in its FastAPI app and registers its
 3. The same extractor produces the recipe and media result.
 4. Your `on_reel(sender_id, result)` callback saves or formats it and returns text to send to the person.
 
-The built-in `auto_reply=True` is a saved-title confirmation. A full ingredient/instruction reply is the callback’s job. The separate original agent runtime remains under reconciliation; these reusable interfaces are the published handoff points.
+The built-in `auto_reply=True` is a saved-title confirmation. A full ingredient/instruction reply is the callback’s job. The [complete recovered runtime](agent-runtime.md) adds the original per-sender queue, Hermes tool loop, persistent history and streamed recipe replies. The callback router remains the smaller integration option.
 
 [Instagram setup](../INSTAGRAM_SETUP.md) records account configuration. [instagram_webhook.py](../packages/recipe-extractor/src/recipe_extractor/instagram_webhook.py) owns verification and replies; [instagram_cdn.py](../packages/recipe-extractor/src/recipe_extractor/instagram_cdn.py) and [extract.py](../packages/recipe-extractor/src/recipe_extractor/extract.py) own resolution and processing.
 
@@ -49,3 +55,4 @@ The built-in `auto_reply=True` is a saved-title confirmation. A full ingredient/
 The original work investigated how Instagram shares expose media: Graph media-node permalinks, expanded message `shares` fields and `ig_messaging_cdn` lookaside attachments. Short-lived signed CDN URLs have their own handling. [The pipeline record](pipeline.md) keeps those details available for the next person maintaining the adapter.
 
 The code supplies CLI, service, inbox and player components. Running the connected journey uses your selected Meta and vision accounts and a source video those accounts can access. Validate current permissions and media routes with that account; review the extracted recipe before using it downstream. The website conversation is an illustration of the product’s interaction, while these source interfaces are its reusable release.
+

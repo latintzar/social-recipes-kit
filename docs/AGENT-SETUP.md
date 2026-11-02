@@ -2,7 +2,7 @@
 
 Social Recipes supplies a video-to-recipe extractor, a timed React player and Instagram webhook/reply helpers. Start with one video, then connect the Instagram inbox if your project needs it.
 
-The published kit contains those reusable components. The separate original agent runtime remains under reconciliation, as recorded in the [project overview](../README.md). Vitrina Local adds the local-shop shopping workflow.
+For a complete Instagram recipe conversation, use [the recovered agent runtime](agent-runtime.md): the original queue, history, Hermes turn loop and streamed replies, with your own Meta, vision and session-store configuration. This guide covers extraction and component integration. Vitrina Local adds the local-shop shopping workflow.
 
 ## Extract one recipe
 
@@ -13,7 +13,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -e './packages/recipe-extractor[service]'
 ```
 
-`yt-dlp` is installed by the Python package. Supply an operator-owned vision API key through the process environment or your secret manager. In Bash, hidden input keeps it out of command history:
+`yt-dlp` is installed by the Python package. Supply your own vision API key through the process environment or your secret manager. In Bash, hidden input keeps it out of command history:
 
 ```bash
 read -r -s -p 'Vision API key: ' RECIPE_LLM_API_KEY
@@ -38,7 +38,7 @@ When you are ready to send a video to your selected provider:
 .venv/bin/recipe-extractor 'https://www.instagram.com/reel/YOUR_REEL/'
 ```
 
-Use a video your account can access. Review the returned recipe, extraction status and saved media. Platform access and model accuracy are part of that first real result. [Extractor and player guide](../README.md#three-modules).
+Use a video your account can access. Review the returned recipe, extraction status and saved media. Platform access and model accuracy are part of that first real result. [Extractor and player guide](../README.md#runtime-and-modules).
 
 ## Connect an Instagram inbox
 

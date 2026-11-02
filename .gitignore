@@ -27,3 +27,7 @@ packages/recipe-video-player/dist/
 .DS_Store
 .idea/
 .vscode/
+
+# Private agent state and environment files
+.env.agent
+.social-recipes-state/

@@ -1,0 +1,37 @@
+[project]
+name = "voice"
+version = "0.1.0"
+description = "Leo voice — transcription, polish, TTS, and audio normalization."
+requires-python = ">=3.11"
+dependencies = [
+    # Runtime deps. `core` provides leo_boto3_client (TTS), plus
+    # http_client_sync (Groq HTTP). `llm` provides chat_sync (polish).
+    # No other Leo-siblings.
+    "core",
+    "llm",
+    "httpx>=0.27",
+    "huggingface_hub>=0.23",
+    "faster-whisper>=1.0",
+    "langdetect>=1.0.9",
+]
+
+[project.optional-dependencies]
+# TTS providers — forward-looking; pulled in when Phase-4 replaces the stubs.
+tts = ["elevenlabs>=1.0"]
+
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/voice"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

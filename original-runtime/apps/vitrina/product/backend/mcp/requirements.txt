@@ -1,0 +1,14 @@
+# vitrina backend/mcp dependencies.
+#
+# Runtime deps only. Everything app-specific imports from
+# `packages/*` via the monorepo's shared layer (see ../api/requirements.txt
+# for the REST mirror of this tool surface).
+
+# MCP transport — stdio + streamable-http.
+fastmcp>=2.0.0
+
+# Implicit transitive (httpx for streamable-http, uvicorn for serving).
+# Listed explicitly for reproducibility.
+httpx>=0.27
+uvicorn[standard]>=0.30
+stripe>=11.0

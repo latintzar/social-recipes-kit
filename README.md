@@ -8,21 +8,22 @@ Social Recipes is an Instagram agent runtime that resolves a shared cooking Reel
 
 ![Social Recipes](https://atelierneyra.com/assets/product-motion-v4/social-recipes.jpg)
 
-The website illustrates the Instagram conversation. The published kit supplies its reusable components; you connect your Meta app, vision provider and recipe reply callback. The separate original agent runtime is being reconciled with these components.
+The original prototype runtime is included with its per-sender queue, conversation history, Hermes tool loop and streamed Instagram replies. The public entry runs the recipe profile with your own Meta, model and session-store configuration. Offline turn and current-SDK checks are included; your account and video establish the live connection. [Run your recipe agent](docs/agent-runtime.md). The website illustrates the conversation.
 
 ## One Reel to a recipe
 
-1. Supply a cooking-video URL you can access, through the CLI or a shared Instagram Reel.
+1. Send a cooking Reel to your connected Instagram account.
 2. Resolve and download its media. The pipeline uses public permalinks, Graph share responses or Instagram’s messaging CDN attachment where available.
 3. Sample frames with FFmpeg and extract a structured recipe using your configured vision model.
-4. Review the recipe and saved MP4. Display them in your app or pass them to an Instagram reply callback.
+4. Receive its ingredients and steps in the chat, then ask a follow-up. The runtime keeps that sender's conversation history. The extractor and saved MP4 can also be used in your own app.
 
 The [product tour](docs/product-tour.md) follows the result through its exact fields, inbox handoff and player. [Vitrina Local](https://github.com/latintzar/vitrina-local) builds the local-stock and basket workflow above this recipe layer.
 
-## Three modules
+## Runtime and modules
 
 | Module | Action and result | Guide |
 | --- | --- | --- |
+| Instagram agent | Reel → queued Hermes turn → recipe replies, with persistent conversation history | [Runtime](docs/agent-runtime.md) |
 | Recipe extractor | Video URL → structured recipe, MP4, thumbnail and extraction status | [Extractor](packages/recipe-extractor/README.md) |
 | Instagram inbox | Signed Reel event → resolved media → recipe callback and optional reply | [Instagram setup](INSTAGRAM_SETUP.md) |
 | Video player | Saved MP4 → native React playback, with platform-embed fallback | [Player](packages/recipe-video-player/README.md) |
@@ -31,7 +32,7 @@ The [product tour](docs/product-tour.md) follows the result through its exact fi
 
 ## Run and adapt
 
-Start with the [agent setup guide](docs/AGENT-SETUP.md): Python 3.10+, FFmpeg and your own OpenAI-compatible vision account. It covers private configuration, the first CLI result and connecting a professional Instagram account.
+For the complete chat agent, start with [the runtime guide](docs/agent-runtime.md): Python 3.14, a pinned Hermes checkout and your own Meta, model and session-store configuration. For extraction on its own, use the [agent setup guide](docs/AGENT-SETUP.md): Python 3.10+, FFmpeg and your own OpenAI-compatible vision account. It covers private configuration, the first CLI result and connecting a professional Instagram account.
 
 | Source area | Contents |
 | --- | --- |
@@ -42,6 +43,8 @@ Start with the [agent setup guide](docs/AGENT-SETUP.md): Python 3.10+, FFmpeg an
 | [recipe-video-player](packages/recipe-video-player) | Reusable React playback component |
 
 Platform access, current response formats and vision accuracy are connection checks with your own video and accounts. Review extracted quantities before using them. The [pipeline guide](docs/pipeline.md) preserves the original CDN investigation and route details; the [extractor reference](packages/recipe-extractor/README.md) covers configuration, storage and deployment.
+
+[The recovered source map](docs/original-runtime.md) preserves the original skill, tools and design context. [Runtime boundaries](docs/runtime-security.md) explain configuration, session ownership and current prototype status.
 
 Original code is [MIT licensed](LICENSE). Dependencies, source videos and connected platforms retain their own terms.
 

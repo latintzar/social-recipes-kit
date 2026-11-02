@@ -1,0 +1,9 @@
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.5
+# Hermes itself is installed on Hetzner with the official installer, not from
+# this requirements file. Vitrina only ships integration code/config that runs
+# against that self-hosted runtime.
+openai>=1.40
+anthropic>=0.40
+httpx>=0.27

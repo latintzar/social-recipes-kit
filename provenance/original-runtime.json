@@ -1,0 +1,1360 @@
+{
+  "source_repository": "Retained private Leo monorepo; selected original source only, without private Git history",
+  "source_revision": "dbac69422281b857b9425ee01bb1876ddbdb7c2c",
+  "selection_date": "2026-11-02",
+  "source_period": "Instagram implementation April\u2013May 2026; retained runtime dormant from 7 May",
+  "files": [
+    {
+      "original_path": "apps/vitrina/product/backend/agent/README.md",
+      "original_sha256": "abab0e30d71ac69f4a4e3dc52dddb8a085158b490f6bd357c69a23509a3f73cf",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/README.md",
+      "public_sha256": "3c1261df493c5c62f13bc0d8e3c7bd0cb3037f8665bfd0bfe0b9c690647e214a",
+      "status": "adapted",
+      "adaptation": "Label retained implementation record and retain unbundled internal references as inline paths; link to current public setup."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/STATE.md",
+      "original_sha256": "9d5e10b0f0a880d7891292458a2e133c0e51fd104c437082f44b6fbcdd8340ce",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/STATE.md",
+      "public_sha256": "3e762e78c7a229f49ef0f8bfc3a3d95581f3097e563c6c1fbffeab47df603334",
+      "status": "adapted",
+      "adaptation": "Label retained implementation record and retain unbundled internal references as inline paths; link to current public setup."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/__init__.py",
+      "original_sha256": "56d5b2d81af68a50f3d0fad4a9945dfc90781e084c4e50e9569c2cc4577f2b78",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/__init__.py",
+      "public_sha256": "56d5b2d81af68a50f3d0fad4a9945dfc90781e084c4e50e9569c2cc4577f2b78",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/agent_factory.py",
+      "original_sha256": "7e2939a16835541f1219bd4af75ce8200383cdd8f5cc55871b3829790084b207",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/agent_factory.py",
+      "public_sha256": "31b7dbfd0daae9b7d3a4b5005ebe2439584dc6b0a43a84520797aea31c4fa2ab",
+      "status": "adapted",
+      "adaptation": "Explicit selected provider; own state and pinned SDK import; whitelisted recipe MCP environment; current constructor/toolset; memory/background/identity disabled."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/platforms/__init__.py",
+      "original_sha256": "62c8775819ee8a940c18d95bd9fda6d31ab5b317a8c02e2802d722e492a04eb7",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/platforms/__init__.py",
+      "public_sha256": "62c8775819ee8a940c18d95bd9fda6d31ab5b317a8c02e2802d722e492a04eb7",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/platforms/channel.py",
+      "original_sha256": "ab6868f9ad1153bec4657117ba975fee2c2bbf0a5ae9de808fe7dcde94d7c858",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/platforms/channel.py",
+      "public_sha256": "a4985e4aa3f964d24326a1009489a9de1d02d708f955e1c7dc770e4381ea4cb0",
+      "status": "adapted",
+      "adaptation": "Close the public runtime's configured Hermes agent after each turn; original history/tool/persistence flow retained."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/platforms/ig_reel_permalink.py",
+      "original_sha256": "85d6bee0842990a332755ac377306456c7eab23f0b288fdab4b527fe9a8bdf97",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/platforms/ig_reel_permalink.py",
+      "public_sha256": "85d6bee0842990a332755ac377306456c7eab23f0b288fdab4b527fe9a8bdf97",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/platforms/ig_webhook_inbound.py",
+      "original_sha256": "af935876eefc93211dc8e2dbeb96e5ce44315a40631186ecfd2516a1340d87f9",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/platforms/ig_webhook_inbound.py",
+      "public_sha256": "af935876eefc93211dc8e2dbeb96e5ce44315a40631186ecfd2516a1340d87f9",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/platforms/instagram_dm.py",
+      "original_sha256": "1c1acd4935c5600afeec70a2326e937871e378022025e886ab6b1a10e1c2b2f9",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/platforms/instagram_dm.py",
+      "public_sha256": "166685498fc84ea614377826f53b624a43d5df2662011c44a531f679f925d294",
+      "status": "adapted",
+      "adaptation": "Fail-closed HMAC; 1MiB admission limit; configured business-account entry filter; recipe profile excludes commerce/profile/voice paths; content-free turn log."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/platforms/instagram_platform.py",
+      "original_sha256": "8d5aebc936a52cd111ee8e21f279d1d8d93ec2c731a26b0abe1b51fed64b5128",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/platforms/instagram_platform.py",
+      "public_sha256": "8d5aebc936a52cd111ee8e21f279d1d8d93ec2c731a26b0abe1b51fed64b5128",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/platforms/instagram_turn_context.py",
+      "original_sha256": "8b3e87966ae0558fae5d3bafc20b5d64804bbf09bb40f6f8c0bc6208994dbd3b",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/platforms/instagram_turn_context.py",
+      "public_sha256": "8b3e87966ae0558fae5d3bafc20b5d64804bbf09bb40f6f8c0bc6208994dbd3b",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/platforms/tiktok_dm.py",
+      "original_sha256": "65c1d107ad993edd97a0682dcfb1fc0efb776ace37d694206c0a711a81af4ef9",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/platforms/tiktok_dm.py",
+      "public_sha256": "65c1d107ad993edd97a0682dcfb1fc0efb776ace37d694206c0a711a81af4ef9",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/repl.py",
+      "original_sha256": "fdd218598ba8836b4adecdce15c17523eff0d6339cf7db5da0bb7a218ca5c6a8",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/repl.py",
+      "public_sha256": "fdd218598ba8836b4adecdce15c17523eff0d6339cf7db5da0bb7a218ca5c6a8",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/requirements.txt",
+      "original_sha256": "8c334ec099d23a89defc66fc37626ae00937e275fd0697b01d556d74fa5887d2",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/requirements.txt",
+      "public_sha256": "8c334ec099d23a89defc66fc37626ae00937e275fd0697b01d556d74fa5887d2",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/server.py",
+      "original_sha256": "9543495896da1b42f01e7882d7204a4dfedf9785e7425c9283f689123044de17",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/server.py",
+      "public_sha256": "9543495896da1b42f01e7882d7204a4dfedf9785e7425c9283f689123044de17",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/session_bridge.py",
+      "original_sha256": "06f50ceaa567051970bb5ee0900c67735f36b973127613e231ef51d16b47db39",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/session_bridge.py",
+      "public_sha256": "6ff7efd9ca8157a81d0ffc3df5658f01aa998944dd43561d9c8bc7b1fd1f48de",
+      "status": "adapted",
+      "adaptation": "Explicit packaged recipe skill and recipe-only ephemeral channel context."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/session_source.py",
+      "original_sha256": "057744de5977e486052d1d0d54f05ffc71c651322a6c3d17ca522cac0080a03b",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/session_source.py",
+      "public_sha256": "3f25d59cb60a7664dac6d2a46ecc9eec7d52549d7ca24853df63fda09436cd7f",
+      "status": "adapted",
+      "adaptation": "Propagate session ownership/storage failures in the public runtime."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/sse_adapter.py",
+      "original_sha256": "24377053a72fe4271cc5ece5fba1195f2ebecee42ca97a8e7f3c157201b85381",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/sse_adapter.py",
+      "public_sha256": "24377053a72fe4271cc5ece5fba1195f2ebecee42ca97a8e7f3c157201b85381",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tests/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tests/__init__.py",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tests/conftest.py",
+      "original_sha256": "a83d0bda9b5dda3b9d612ed455dc7f0962e0dc464cb0f0adb59c1ca6b121cfcd",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tests/conftest.py",
+      "public_sha256": "a83d0bda9b5dda3b9d612ed455dc7f0962e0dc464cb0f0adb59c1ca6b121cfcd",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tests/test_instagram_dm_permalink.py",
+      "original_sha256": "a04d7f124cd456fa82ec3d77b0b43565d87034b96b86fec2c5aade4c8aa16490",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tests/test_instagram_dm_permalink.py",
+      "public_sha256": "a04d7f124cd456fa82ec3d77b0b43565d87034b96b86fec2c5aade4c8aa16490",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tests/test_instagram_dm_turn_context.py",
+      "original_sha256": "18ad5e135df8f8e0605623f139e599e9733fe0420c33284ec27ce02faea50fed",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tests/test_instagram_dm_turn_context.py",
+      "public_sha256": "18ad5e135df8f8e0605623f139e599e9733fe0420c33284ec27ce02faea50fed",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tests/test_instagram_graph_transport.py",
+      "original_sha256": "8e1e37bf34ec14118a4a21c1edafd1168ef4cdef86598ad1c6f30c507d4e9a89",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tests/test_instagram_graph_transport.py",
+      "public_sha256": "8e1e37bf34ec14118a4a21c1edafd1168ef4cdef86598ad1c6f30c507d4e9a89",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tests/test_instagram_platform_profile.py",
+      "original_sha256": "e0764ea034c2312f25ee600e31184f6f78bbaffce28db6e5c2b5576f64f49d14",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tests/test_instagram_platform_profile.py",
+      "public_sha256": "e0764ea034c2312f25ee600e31184f6f78bbaffce28db6e5c2b5576f64f49d14",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tests/test_session_bridge.py",
+      "original_sha256": "23b7dd64ed42ceafc45468384c94474726d1e79e0e5d3528a5da3d689f9e7c50",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tests/test_session_bridge.py",
+      "public_sha256": "23b7dd64ed42ceafc45468384c94474726d1e79e0e5d3528a5da3d689f9e7c50",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tests/test_sse_adapter.py",
+      "original_sha256": "e5968774333400abc0a9822c15798702e88feb5b6c63a51c27e8efca975ffb71",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tests/test_sse_adapter.py",
+      "public_sha256": "e5968774333400abc0a9822c15798702e88feb5b6c63a51c27e8efca975ffb71",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/tracing.py",
+      "original_sha256": "9e4dd154c600f5caeef2c506767d9050cc2928012a698f7b071610d5258f6105",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/tracing.py",
+      "public_sha256": "40b7e887112662fa83c189a4234090525020a23165c1e334cf998d5e71fda329",
+      "status": "adapted",
+      "adaptation": "Public runtime metadata-only trace fields."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/agent/vitrina_tools/__init__.py",
+      "original_sha256": "01720cc00549ac5c09ba5a28ea0edb6377cd8f5dd6d060fe2f9f916fe61b4dc6",
+      "public_path": "original-runtime/apps/vitrina/product/backend/agent/vitrina_tools/__init__.py",
+      "public_sha256": "01720cc00549ac5c09ba5a28ea0edb6377cd8f5dd6d060fe2f9f916fe61b4dc6",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/api/migrations/001_commerce_tables.sql",
+      "original_sha256": "d784a25186e2cbfcaf74e026e18bbc38addca7d11e01478bdad4564e067fcffc",
+      "public_path": "original-runtime/apps/vitrina/product/backend/api/migrations/001_commerce_tables.sql",
+      "public_sha256": "d784a25186e2cbfcaf74e026e18bbc38addca7d11e01478bdad4564e067fcffc",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/api/migrations/009_chat_threads_metadata.sql",
+      "original_sha256": "71dd59c4c055fffa6095730441cdb4fdf063a4ef8516364da3cd3537f9bab941",
+      "public_path": "original-runtime/apps/vitrina/product/backend/api/migrations/009_chat_threads_metadata.sql",
+      "public_sha256": "71dd59c4c055fffa6095730441cdb4fdf063a4ef8516364da3cd3537f9bab941",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/README.md",
+      "original_sha256": "0de84da0b24cd9079d0d301d1d88a2b59786339d7221e9611e7a3d9fe6f846b9",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/README.md",
+      "public_sha256": "0de84da0b24cd9079d0d301d1d88a2b59786339d7221e9611e7a3d9fe6f846b9",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/_magic_link.py",
+      "original_sha256": "374fb86d81b6505da873f20fe1e3830fb7e4893b00d8af0d666982d8fd25939f",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/_magic_link.py",
+      "public_sha256": "374fb86d81b6505da873f20fe1e3830fb7e4893b00d8af0d666982d8fd25939f",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/_session_norm.py",
+      "original_sha256": "2a002f03b8dc69b7c6e0b7d3fae3c442e01afa5a6f415a9e7af0993032641484",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/_session_norm.py",
+      "public_sha256": "2a002f03b8dc69b7c6e0b7d3fae3c442e01afa5a6f415a9e7af0993032641484",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/agent_errors.py",
+      "original_sha256": "0ed1c91b2fcb8361bae6a5eaf676b08285c14e8eff793d6c2fa114bd260266fe",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/agent_errors.py",
+      "public_sha256": "0ed1c91b2fcb8361bae6a5eaf676b08285c14e8eff793d6c2fa114bd260266fe",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/cart.py",
+      "original_sha256": "a309c73f9089ab8e8390f76571c8feb1341cb418d209b62b1422815c03814367",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/cart.py",
+      "public_sha256": "a309c73f9089ab8e8390f76571c8feb1341cb418d209b62b1422815c03814367",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/chat_jobs.py",
+      "original_sha256": "3b0ca605f0f6ea8ecae3ff17173b1b37453787ca49c6690a68cb5e2531ae07af",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/chat_jobs.py",
+      "public_sha256": "3b0ca605f0f6ea8ecae3ff17173b1b37453787ca49c6690a68cb5e2531ae07af",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/chat_threads.py",
+      "original_sha256": "4c34d12e0a98df396cc09513da256c14965dd1afb53629626a57d4667dac536b",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/chat_threads.py",
+      "public_sha256": "87cc11a656a209f7b0bb1ff420f4cce45c06f970b276cae19ad11a402ef762f5",
+      "status": "adapted",
+      "adaptation": "Clarify public verified-sender/server-only session boundary in the module documentation; original handler bodies retained."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/checkout.py",
+      "original_sha256": "f9c175ab29f93324300ff9a43421f94c194e950a63a4a1c7a942750ca501c7ec",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/checkout.py",
+      "public_sha256": "f9c175ab29f93324300ff9a43421f94c194e950a63a4a1c7a942750ca501c7ec",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/checkout_handlers.py",
+      "original_sha256": "5a8950d7b67983d87f9fe763c1745c0c4b6d544fe7e5cb0680efb100f8f340da",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/checkout_handlers.py",
+      "public_sha256": "5a8950d7b67983d87f9fe763c1745c0c4b6d544fe7e5cb0680efb100f8f340da",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/checkout_tokens.py",
+      "original_sha256": "e296d56dc6522dd2fca500c1b91291cd1b27252435b8bea25187864733a4648e",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/checkout_tokens.py",
+      "public_sha256": "e296d56dc6522dd2fca500c1b91291cd1b27252435b8bea25187864733a4648e",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/data.py",
+      "original_sha256": "29a08cac2f16bc196e0afe474f7a58f30306525f2e0d685e8fd47076e35fc330",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/data.py",
+      "public_sha256": "29a08cac2f16bc196e0afe474f7a58f30306525f2e0d685e8fd47076e35fc330",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/ig_channel_tools.py",
+      "original_sha256": "c9c31b0cb8a0208861457d7cc1cb6c058473c60245ae34f345e64091b234a5ef",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/ig_channel_tools.py",
+      "public_sha256": "c9c31b0cb8a0208861457d7cc1cb6c058473c60245ae34f345e64091b234a5ef",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/location_tokens.py",
+      "original_sha256": "c40310e47c3ef183a070e2ed38aa8a767a76417f5e9c0912306964f2415ad8e6",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/location_tokens.py",
+      "public_sha256": "c40310e47c3ef183a070e2ed38aa8a767a76417f5e9c0912306964f2415ad8e6",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/orders.py",
+      "original_sha256": "6054a944d60f12c88c8f8c89fde41e804f4ad84b2c4b16589fbf3d9fa46fa5ac",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/orders.py",
+      "public_sha256": "6054a944d60f12c88c8f8c89fde41e804f4ad84b2c4b16589fbf3d9fa46fa5ac",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/recipe_prematch.py",
+      "original_sha256": "b57307c9a362994a50dc3d21550364e8b28f78667824e57cbff6d2408f908ea1",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/recipe_prematch.py",
+      "public_sha256": "b57307c9a362994a50dc3d21550364e8b28f78667824e57cbff6d2408f908ea1",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/recipes_tools.py",
+      "original_sha256": "e345b439b2fc1e3b6d0ad48a4acdba21741795eb6119a0537c7eab04ca3f57b1",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/recipes_tools.py",
+      "public_sha256": "e345b439b2fc1e3b6d0ad48a4acdba21741795eb6119a0537c7eab04ca3f57b1",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/replan.py",
+      "original_sha256": "fd215d139f7ad85699421d59d2e61a74047ab3a38c0c5277211ecbfaa9614988",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/replan.py",
+      "public_sha256": "fd215d139f7ad85699421d59d2e61a74047ab3a38c0c5277211ecbfaa9614988",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/requirements.txt",
+      "original_sha256": "2ec00e77be2c7d47f7b02db48fc0d762ba3ae6787a8409b8451cdc725fa07fd1",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/requirements.txt",
+      "public_sha256": "2ec00e77be2c7d47f7b02db48fc0d762ba3ae6787a8409b8451cdc725fa07fd1",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/seed/migrate_ontology.py",
+      "original_sha256": "93212a7cbb55b8dae7d0170c52342f0eeb2991224a250fa3ba341678e7458cf3",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/seed/migrate_ontology.py",
+      "public_sha256": "93212a7cbb55b8dae7d0170c52342f0eeb2991224a250fa3ba341678e7458cf3",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/server.py",
+      "original_sha256": "3524ec3aaf4bde48e0cd319e5a041ae8eb699a4ccfb239887e53e5947a16d4fd",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/server.py",
+      "public_sha256": "3524ec3aaf4bde48e0cd319e5a041ae8eb699a4ccfb239887e53e5947a16d4fd",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/shop_hours.py",
+      "original_sha256": "1754eea09a3e8902bc83b3f5a14e09c62cfe12c94f6b0978a30afd4c85fa0b40",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/shop_hours.py",
+      "public_sha256": "1754eea09a3e8902bc83b3f5a14e09c62cfe12c94f6b0978a30afd4c85fa0b40",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/skills.py",
+      "original_sha256": "d9f4e728ca45946d18cb45d5b569d62f11bf0b4297904045558a34b96bf5f86e",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/skills.py",
+      "public_sha256": "d9f4e728ca45946d18cb45d5b569d62f11bf0b4297904045558a34b96bf5f86e",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/snapshots.py",
+      "original_sha256": "5d66aa0c5b9e5e19409d586ba0ec0422e7f97d1fd550fbe9d5540e762509c508",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/snapshots.py",
+      "public_sha256": "5d66aa0c5b9e5e19409d586ba0ec0422e7f97d1fd550fbe9d5540e762509c508",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/supabase_client.py",
+      "original_sha256": "68aa64faa8edce02649aa172a42e08838a417203066b27b42af38a4e044957df",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/supabase_client.py",
+      "public_sha256": "e8e573b6e69f362dadc57f53ab6c1c8974a82cac2cb4a2dccf77df37e9be7854",
+      "status": "adapted",
+      "adaptation": "Dedicated social_recipes schema selected in the public runtime."
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/conftest.py",
+      "original_sha256": "1dbd9445c34b28c4bc35fdc7eda018eea357eb4c6a382d80a2a532ae066a7cd2",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/conftest.py",
+      "public_sha256": "1dbd9445c34b28c4bc35fdc7eda018eea357eb4c6a382d80a2a532ae066a7cd2",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/fixtures/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/fixtures/__init__.py",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/fixtures/supabase_mock.py",
+      "original_sha256": "07492404b86258c7d6bb88e0e876194c7412783f55b715f81dc1c6532dce75f6",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/fixtures/supabase_mock.py",
+      "public_sha256": "07492404b86258c7d6bb88e0e876194c7412783f55b715f81dc1c6532dce75f6",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_agent_errors.py",
+      "original_sha256": "c26f0d4ea5a26b1440fcccd12c538d353134019fbbbcb1899fd2413fa579cb4e",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_agent_errors.py",
+      "public_sha256": "c26f0d4ea5a26b1440fcccd12c538d353134019fbbbcb1899fd2413fa579cb4e",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_carts.py",
+      "original_sha256": "a2179b951263e37a6c347796e05c6341507685cd9ce2b5fd4a038fe7bf77788a",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_carts.py",
+      "public_sha256": "a2179b951263e37a6c347796e05c6341507685cd9ce2b5fd4a038fe7bf77788a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_chat_threads.py",
+      "original_sha256": "863f300d8fcd08c0d6d9df86da8d95091f105853b1a16eed6623283cf7634950",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_chat_threads.py",
+      "public_sha256": "863f300d8fcd08c0d6d9df86da8d95091f105853b1a16eed6623283cf7634950",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_checkout.py",
+      "original_sha256": "762295250b80f764a44e6e89d079315e3ab5ef4e956ed54666c6a10036dcaa20",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_checkout.py",
+      "public_sha256": "762295250b80f764a44e6e89d079315e3ab5ef4e956ed54666c6a10036dcaa20",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_cron_sweep.py",
+      "original_sha256": "7750cabfd77f2f2f80c1c35cc11969148840b15e214ee09ef93b5857ebdd814a",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_cron_sweep.py",
+      "public_sha256": "7750cabfd77f2f2f80c1c35cc11969148840b15e214ee09ef93b5857ebdd814a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_discovery_conformance.py",
+      "original_sha256": "764c514c3ad8072aee5a9b7e8d630f96a0206badcd84e148a57a0d9a8494320a",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_discovery_conformance.py",
+      "public_sha256": "764c514c3ad8072aee5a9b7e8d630f96a0206badcd84e148a57a0d9a8494320a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_ig_channel_tools.py",
+      "original_sha256": "9877abe96eb5e75514aaec45c8b927a9cf202b4485281fb117d09c3031b2688f",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_ig_channel_tools.py",
+      "public_sha256": "9877abe96eb5e75514aaec45c8b927a9cf202b4485281fb117d09c3031b2688f",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_multishop.py",
+      "original_sha256": "19aace180aebc0ba6198cee3a86cff3c13151969a00cc17ab59f4778b6156959",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_multishop.py",
+      "public_sha256": "19aace180aebc0ba6198cee3a86cff3c13151969a00cc17ab59f4778b6156959",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_qr_collect.py",
+      "original_sha256": "be2f549c4e73f7c82c113c752e85d391fb6b98a96a87f557bd9c0b4e7b8f5101",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_qr_collect.py",
+      "public_sha256": "be2f549c4e73f7c82c113c752e85d391fb6b98a96a87f557bd9c0b4e7b8f5101",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_recipe_groups.py",
+      "original_sha256": "04c6857617dcc3938397512d6fa291d5d1d938ee4af14575b770dee16bce252f",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_recipe_groups.py",
+      "public_sha256": "04c6857617dcc3938397512d6fa291d5d1d938ee4af14575b770dee16bce252f",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_recipes_tools.py",
+      "original_sha256": "e2cc6776ec1b1d771196a48ca37cbe75bfe3c1b4cc43664fb49bff113835b5d3",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_recipes_tools.py",
+      "public_sha256": "e2cc6776ec1b1d771196a48ca37cbe75bfe3c1b4cc43664fb49bff113835b5d3",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_replan.py",
+      "original_sha256": "d1ffa2897c3ed7c251e67351dc4c255ded853fcc605544e7ccccac747fdf538c",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_replan.py",
+      "public_sha256": "d1ffa2897c3ed7c251e67351dc4c255ded853fcc605544e7ccccac747fdf538c",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_sca_escalation.py",
+      "original_sha256": "1b7c07683256c1cf8cff0fc9b0a8261d6e934bf3b478c19c900d943cc306a9d4",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_sca_escalation.py",
+      "public_sha256": "1b7c07683256c1cf8cff0fc9b0a8261d6e934bf3b478c19c900d943cc306a9d4",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_seed_from_order.py",
+      "original_sha256": "41daf4cbe094c984eb8045b0cba6a3f6a2f94ebb787505e1e02adf95b020ebf6",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_seed_from_order.py",
+      "public_sha256": "41daf4cbe094c984eb8045b0cba6a3f6a2f94ebb787505e1e02adf95b020ebf6",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_shop_hours.py",
+      "original_sha256": "8846e636d7c8b9ace538356174b1be3b0ecafdef0b46ff2c84c1b8085c5aa33b",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_shop_hours.py",
+      "public_sha256": "8846e636d7c8b9ace538356174b1be3b0ecafdef0b46ff2c84c1b8085c5aa33b",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_supabase_client.py",
+      "original_sha256": "64a788e0910909d2b13fdc8590fdf62402f163603ed0f0aa70ed470c65899618",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_supabase_client.py",
+      "public_sha256": "64a788e0910909d2b13fdc8590fdf62402f163603ed0f0aa70ed470c65899618",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tests/test_tools.py",
+      "original_sha256": "eb508aab6bf603d4eaa7ca1d948d964caf982a8afc29556637e3f3151ced77fa",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tests/test_tools.py",
+      "public_sha256": "eb508aab6bf603d4eaa7ca1d948d964caf982a8afc29556637e3f3151ced77fa",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/mcp/tools.py",
+      "original_sha256": "4ddfcf2e38d71e6b0982908f632a128a34129e2e6bede0cc4feea81ce0d81db6",
+      "public_path": "original-runtime/apps/vitrina/product/backend/mcp/tools.py",
+      "public_sha256": "4ddfcf2e38d71e6b0982908f632a128a34129e2e6bede0cc4feea81ce0d81db6",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/README.md",
+      "original_sha256": "b42c54421e1a9b3a71c15f298a833ff916bbeb16d4b5f842446fe1538cc5edf3",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/README.md",
+      "public_sha256": "b42c54421e1a9b3a71c15f298a833ff916bbeb16d4b5f842446fe1538cc5edf3",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/catalog.py",
+      "original_sha256": "d3c29776d06b27b2bdb6a8a756baa30996c2a28933b396159b4a9e8a62035908",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/catalog.py",
+      "public_sha256": "d3c29776d06b27b2bdb6a8a756baa30996c2a28933b396159b4a9e8a62035908",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/extract_social_recipe.py",
+      "original_sha256": "0ad05163750a432da96b2ad0cd0c5b17811df7b6b1597a77f1b3d4620b8a85c6",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/extract_social_recipe.py",
+      "public_sha256": "0ad05163750a432da96b2ad0cd0c5b17811df7b6b1597a77f1b3d4620b8a85c6",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/recipe_schema_prompt.py",
+      "original_sha256": "50b5a580f72064894878a295c733207233a51bf0ccb2c95b548f37f2e5d33862",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/recipe_schema_prompt.py",
+      "public_sha256": "50b5a580f72064894878a295c733207233a51bf0ccb2c95b548f37f2e5d33862",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/requirements.txt",
+      "original_sha256": "f6c1314f63a8a549dca590f0911c7ede03cc1f8704f9626848a43ada3b587de0",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/requirements.txt",
+      "public_sha256": "f6c1314f63a8a549dca590f0911c7ede03cc1f8704f9626848a43ada3b587de0",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/scripts/backfill_matches.py",
+      "original_sha256": "4b306ad03aebc4aa26a3a4626a9ef170711636d2a3cc3b8161157bf0f9d7838a",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/scripts/backfill_matches.py",
+      "public_sha256": "4b306ad03aebc4aa26a3a4626a9ef170711636d2a3cc3b8161157bf0f9d7838a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/scripts/backfill_videos.py",
+      "original_sha256": "7e8d41230e3ce287fa1bb09dd56316f363690f70012808baee7f7f305557acf4",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/scripts/backfill_videos.py",
+      "public_sha256": "7e8d41230e3ce287fa1bb09dd56316f363690f70012808baee7f7f305557acf4",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/scripts/build_seed_pool.py",
+      "original_sha256": "af815703e9475fe27b771ae334ff0d4803a9e344274cc630deb4f0b60ba1d36a",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/scripts/build_seed_pool.py",
+      "public_sha256": "af815703e9475fe27b771ae334ff0d4803a9e344274cc630deb4f0b60ba1d36a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/searxng_client.py",
+      "original_sha256": "89bdef165557171b174fa1051456c1b32e1ece63858195a498141fe23ec2d4d6",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/searxng_client.py",
+      "public_sha256": "89bdef165557171b174fa1051456c1b32e1ece63858195a498141fe23ec2d4d6",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/shop_matcher.py",
+      "original_sha256": "3fbcc8bd6a982743b1120c5b78dfe7a9f075f12384a78275de1592324c104c51",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/shop_matcher.py",
+      "public_sha256": "3fbcc8bd6a982743b1120c5b78dfe7a9f075f12384a78275de1592324c104c51",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/social_discover.py",
+      "original_sha256": "2b4d711efb7b64ed37fd890c16e6cba0942241120b3a31465340931b8547aa16",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/social_discover.py",
+      "public_sha256": "2b4d711efb7b64ed37fd890c16e6cba0942241120b3a31465340931b8547aa16",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/synthesize_recipe.py",
+      "original_sha256": "00f11a320a14f76f4e5816f2f7ace859459d603f624f11a2cef55703b18d2e49",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/synthesize_recipe.py",
+      "public_sha256": "00f11a320a14f76f4e5816f2f7ace859459d603f624f11a2cef55703b18d2e49",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/tests/test_feed_row_from_url.py",
+      "original_sha256": "6eb4771e3b8acd83180ae252cdb2e44a4e4aa01c809595d34464c084da72a6fd",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/tests/test_feed_row_from_url.py",
+      "public_sha256": "6eb4771e3b8acd83180ae252cdb2e44a4e4aa01c809595d34464c084da72a6fd",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/tests/test_unit_parser.py",
+      "original_sha256": "bf28a362d1ecf7fef1a15c185e6fd5d26579860870b50848e902ae37ba781a5b",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/tests/test_unit_parser.py",
+      "public_sha256": "bf28a362d1ecf7fef1a15c185e6fd5d26579860870b50848e902ae37ba781a5b",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/product/backend/recipe_videos/unit_parser.py",
+      "original_sha256": "6296b4c70c064c0b3a958736486c3468d4f543dace459c9cb8c61133748c2c9a",
+      "public_path": "original-runtime/apps/vitrina/product/backend/recipe_videos/unit_parser.py",
+      "public_sha256": "6296b4c70c064c0b3a958736486c3468d4f543dace459c9cb8c61133748c2c9a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/skills/vitrina-shopper/SKILL.md",
+      "original_sha256": "8135f0903a302b9ae4a55dab42cb08ace90f8f337686d37509249a5475d1b8b3",
+      "public_path": "original-runtime/apps/vitrina/skills/vitrina-shopper/SKILL.md",
+      "public_sha256": "8135f0903a302b9ae4a55dab42cb08ace90f8f337686d37509249a5475d1b8b3",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "apps/vitrina/skills/vitrina-shopper/SOUL.md",
+      "original_sha256": "bf8f2be76bb05c3c2c42cc8c1212c205790a95f370270f30a86987e8f0e01849",
+      "public_path": "original-runtime/apps/vitrina/skills/vitrina-shopper/SOUL.md",
+      "public_sha256": "bf8f2be76bb05c3c2c42cc8c1212c205790a95f370270f30a86987e8f0e01849",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/README.md",
+      "original_sha256": "902e746ee9064915b6f225cc418f4ddfa11a46623663f8f19d44395aaf48b226",
+      "public_path": "original-runtime/packages/core/README.md",
+      "public_sha256": "ef70b7f30bb65e9e542ea7d3430a77354f4a7d8575985441860e9970b7d71fcc",
+      "status": "adapted",
+      "adaptation": "Label retained implementation record and retain unbundled internal references as inline paths; link to current public setup."
+    },
+    {
+      "original_path": "packages/core/pyproject.toml",
+      "original_sha256": "342e7b8349c9758ba0ea7e78d25abf402f018f36350bf209d4a532d92532831e",
+      "public_path": "original-runtime/packages/core/pyproject.toml",
+      "public_sha256": "342e7b8349c9758ba0ea7e78d25abf402f018f36350bf209d4a532d92532831e",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/__init__.py",
+      "original_sha256": "c486d740f3fbcb2d137c0efb1a758dd6c573e681c2ead1506daecc684b33603c",
+      "public_path": "original-runtime/packages/core/src/core/__init__.py",
+      "public_sha256": "c486d740f3fbcb2d137c0efb1a758dd6c573e681c2ead1506daecc684b33603c",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/auth/__init__.py",
+      "original_sha256": "8bde30319a9716cd0489dea009c8e7b74dee9117ad00875dffa34bb262d3874a",
+      "public_path": "original-runtime/packages/core/src/core/auth/__init__.py",
+      "public_sha256": "8bde30319a9716cd0489dea009c8e7b74dee9117ad00875dffa34bb262d3874a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/auth/api_keys.py",
+      "original_sha256": "19b49e346628b4e8b197ed5de992e63bc6981c58987e77ebf388a9a0f2f066be",
+      "public_path": "original-runtime/packages/core/src/core/auth/api_keys.py",
+      "public_sha256": "19b49e346628b4e8b197ed5de992e63bc6981c58987e77ebf388a9a0f2f066be",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/auth/deps.py",
+      "original_sha256": "9f6039e865ef1675df7db9eb3d6b7f5e0cd79fd821a3463f87938acb38aeb221",
+      "public_path": "original-runtime/packages/core/src/core/auth/deps.py",
+      "public_sha256": "9f6039e865ef1675df7db9eb3d6b7f5e0cd79fd821a3463f87938acb38aeb221",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/auth/jwt.py",
+      "original_sha256": "ae8e8fc0e18b21cea6975ae1b1f0b4af090dbd6b6dab0024c94d1f848028122a",
+      "public_path": "original-runtime/packages/core/src/core/auth/jwt.py",
+      "public_sha256": "ae8e8fc0e18b21cea6975ae1b1f0b4af090dbd6b6dab0024c94d1f848028122a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/auth/tokens.py",
+      "original_sha256": "bd7b3edf790e720e17ed980b4b022d40648edb40c42fc037bb2fed605be0f211",
+      "public_path": "original-runtime/packages/core/src/core/auth/tokens.py",
+      "public_sha256": "bd7b3edf790e720e17ed980b4b022d40648edb40c42fc037bb2fed605be0f211",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/auth/users.py",
+      "original_sha256": "de8d544abc6a990de4d130fdecc6a5f61870f87ec74840dd77a2902509eb7ccb",
+      "public_path": "original-runtime/packages/core/src/core/auth/users.py",
+      "public_sha256": "de8d544abc6a990de4d130fdecc6a5f61870f87ec74840dd77a2902509eb7ccb",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/auth/webhooks.py",
+      "original_sha256": "6c8e7539520fb7ebfff36eb4ee3e68d4b4ad92482f95bacb4a104a0262c4dfe0",
+      "public_path": "original-runtime/packages/core/src/core/auth/webhooks.py",
+      "public_sha256": "6c8e7539520fb7ebfff36eb4ee3e68d4b4ad92482f95bacb4a104a0262c4dfe0",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/aws.py",
+      "original_sha256": "b5985c3e693ca121c72a7a63c1fda44403f7dafacfb75902df526fc252cb96e7",
+      "public_path": "original-runtime/packages/core/src/core/aws.py",
+      "public_sha256": "b5985c3e693ca121c72a7a63c1fda44403f7dafacfb75902df526fc252cb96e7",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/bootstrap.py",
+      "original_sha256": "b0783c638adfcd9d48d76366449bc406b6ccfaf3950c12003b360af8c8eb4277",
+      "public_path": "original-runtime/packages/core/src/core/bootstrap.py",
+      "public_sha256": "13f7951c3c8dcf3430de5c2001f401a7cfb1d227aacb97eec9f738ebc7da3709",
+      "status": "adapted",
+      "adaptation": "Disable ancestor dotenv/bootstrap discovery in the explicit runtime."
+    },
+    {
+      "original_path": "packages/core/src/core/db.py",
+      "original_sha256": "078939b3fe046b866bcdef5a40535675417bb3deb934fc16fc9dcce52d2e7eef",
+      "public_path": "original-runtime/packages/core/src/core/db.py",
+      "public_sha256": "078939b3fe046b866bcdef5a40535675417bb3deb934fc16fc9dcce52d2e7eef",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/errors.py",
+      "original_sha256": "3aa60c5ecd810228f66b6275a0cbe0861d59e6ebdfe2798fec218fa377d4aebd",
+      "public_path": "original-runtime/packages/core/src/core/errors.py",
+      "public_sha256": "3aa60c5ecd810228f66b6275a0cbe0861d59e6ebdfe2798fec218fa377d4aebd",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/http.py",
+      "original_sha256": "7779e62de6c700d168af9b215c257c5ed552eccd56504920ac13857034f299e2",
+      "public_path": "original-runtime/packages/core/src/core/http.py",
+      "public_sha256": "7779e62de6c700d168af9b215c257c5ed552eccd56504920ac13857034f299e2",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/money.py",
+      "original_sha256": "c00616f58d8ade8ec676b28c6f53a077765b89291450696d9abc479282f1bfde",
+      "public_path": "original-runtime/packages/core/src/core/money.py",
+      "public_sha256": "c00616f58d8ade8ec676b28c6f53a077765b89291450696d9abc479282f1bfde",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/phone.py",
+      "original_sha256": "4b71f63472a1ba9d482a92196f64a5f0537a0fca3b5bf42c89bbd1262548314a",
+      "public_path": "original-runtime/packages/core/src/core/phone.py",
+      "public_sha256": "4b71f63472a1ba9d482a92196f64a5f0537a0fca3b5bf42c89bbd1262548314a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/py.typed",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "original-runtime/packages/core/src/core/py.typed",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/resilience.py",
+      "original_sha256": "cf3f98c653e1bbb915ab9ef17118c457d1fdfb093689e32c8062b47c6ca651ce",
+      "public_path": "original-runtime/packages/core/src/core/resilience.py",
+      "public_sha256": "cf3f98c653e1bbb915ab9ef17118c457d1fdfb093689e32c8062b47c6ca651ce",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/core/src/core/text.py",
+      "original_sha256": "982206b55a901a8170050bbc085279281ca13222949f61757aab8c92c88dc896",
+      "public_path": "original-runtime/packages/core/src/core/text.py",
+      "public_sha256": "982206b55a901a8170050bbc085279281ca13222949f61757aab8c92c88dc896",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/README.md",
+      "original_sha256": "66665d2b65f26613c9b288d9e5e8f2d2a89bfca8bbd86a9801cb8061dfa8998a",
+      "public_path": "original-runtime/packages/llm/README.md",
+      "public_sha256": "66665d2b65f26613c9b288d9e5e8f2d2a89bfca8bbd86a9801cb8061dfa8998a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/pyproject.toml",
+      "original_sha256": "8a91533d82e1540b5560e32c347a25986726634137ad4ba40df942153f8ad5dd",
+      "public_path": "original-runtime/packages/llm/pyproject.toml",
+      "public_sha256": "8a91533d82e1540b5560e32c347a25986726634137ad4ba40df942153f8ad5dd",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/__init__.py",
+      "original_sha256": "bd0cfd90bbd562932fa6c9a93fbf9304284438846ccbdd7d7cc86cfc7b0eb23b",
+      "public_path": "original-runtime/packages/llm/src/llm/__init__.py",
+      "public_sha256": "bd0cfd90bbd562932fa6c9a93fbf9304284438846ccbdd7d7cc86cfc7b0eb23b",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/chat.py",
+      "original_sha256": "dd136606e11d0052a0d6ca76df73d8d4b473a5242bb9603c3b67bc64208f5c44",
+      "public_path": "original-runtime/packages/llm/src/llm/chat.py",
+      "public_sha256": "dd136606e11d0052a0d6ca76df73d8d4b473a5242bb9603c3b67bc64208f5c44",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/config.py",
+      "original_sha256": "a4f8e2c3f3f452c8ebb9d98955cb73727892e00fd9640350bad31eba695cf6b6",
+      "public_path": "original-runtime/packages/llm/src/llm/config.py",
+      "public_sha256": "a4f8e2c3f3f452c8ebb9d98955cb73727892e00fd9640350bad31eba695cf6b6",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/embed.py",
+      "original_sha256": "f02915dd461a6dbe369cb892b8ea0be92a009240424d5613885d910af1e48a9d",
+      "public_path": "original-runtime/packages/llm/src/llm/embed.py",
+      "public_sha256": "f02915dd461a6dbe369cb892b8ea0be92a009240424d5613885d910af1e48a9d",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/errors.py",
+      "original_sha256": "36d7bd94648b79e82991e7bd5dd747a851023645b644e0e7b92c2b26fc7be58a",
+      "public_path": "original-runtime/packages/llm/src/llm/errors.py",
+      "public_sha256": "36d7bd94648b79e82991e7bd5dd747a851023645b644e0e7b92c2b26fc7be58a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/images.py",
+      "original_sha256": "afd1a8e5b551256bccedd7d958f7044e8b66be79eca5af239956dd463c1c67c0",
+      "public_path": "original-runtime/packages/llm/src/llm/images.py",
+      "public_sha256": "afd1a8e5b551256bccedd7d958f7044e8b66be79eca5af239956dd463c1c67c0",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/models/__init__.py",
+      "original_sha256": "855cae583d047d239c5dca11d95328b6ff8451e088a90a7fdc42487bb0500a12",
+      "public_path": "original-runtime/packages/llm/src/llm/models/__init__.py",
+      "public_sha256": "855cae583d047d239c5dca11d95328b6ff8451e088a90a7fdc42487bb0500a12",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/models/pricing.py",
+      "original_sha256": "ed9139ae17c6b15220a7ff4044ef850b69f17f3976407806a71760f5dc760cef",
+      "public_path": "original-runtime/packages/llm/src/llm/models/pricing.py",
+      "public_sha256": "ed9139ae17c6b15220a7ff4044ef850b69f17f3976407806a71760f5dc760cef",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/models/registry.py",
+      "original_sha256": "ed561203f923c5b1446ee670a7a7f0fe27cbfd6087357ff8a7c290d7b394d810",
+      "public_path": "original-runtime/packages/llm/src/llm/models/registry.py",
+      "public_sha256": "ed561203f923c5b1446ee670a7a7f0fe27cbfd6087357ff8a7c290d7b394d810",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/models/tiers.py",
+      "original_sha256": "c9767a270635117b30315c1c762e16697d1a1c8e750b66f9bb4df033a403aad3",
+      "public_path": "original-runtime/packages/llm/src/llm/models/tiers.py",
+      "public_sha256": "c9767a270635117b30315c1c762e16697d1a1c8e750b66f9bb4df033a403aad3",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/prompts/__init__.py",
+      "original_sha256": "90989d1f82835e8d3ea0bf9438a4fe3a89b139c72d8fca194d603b856cc259f7",
+      "public_path": "original-runtime/packages/llm/src/llm/prompts/__init__.py",
+      "public_sha256": "90989d1f82835e8d3ea0bf9438a4fe3a89b139c72d8fca194d603b856cc259f7",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/prompts/loader.py",
+      "original_sha256": "51ee4dc3ba1a8f75b6f659f7411115c7543a21f069ba154890907c2230749efa",
+      "public_path": "original-runtime/packages/llm/src/llm/prompts/loader.py",
+      "public_sha256": "51ee4dc3ba1a8f75b6f659f7411115c7543a21f069ba154890907c2230749efa",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/prompts/registry.py",
+      "original_sha256": "27c63ab9e7b91484c63c9799c09c7aa3670f14a47246c9ebdfe287f0f24c12b2",
+      "public_path": "original-runtime/packages/llm/src/llm/prompts/registry.py",
+      "public_sha256": "27c63ab9e7b91484c63c9799c09c7aa3670f14a47246c9ebdfe287f0f24c12b2",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/providers/__init__.py",
+      "original_sha256": "d985294a418cd9e2b32ce0d6dbcad2217d8d6d4ef9b11ba2ca1893fb7cab8248",
+      "public_path": "original-runtime/packages/llm/src/llm/providers/__init__.py",
+      "public_sha256": "d985294a418cd9e2b32ce0d6dbcad2217d8d6d4ef9b11ba2ca1893fb7cab8248",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/providers/base.py",
+      "original_sha256": "231a6a3e26f3c68485a10797b63e9adeff85e6bad6049ee4120aca253636c291",
+      "public_path": "original-runtime/packages/llm/src/llm/providers/base.py",
+      "public_sha256": "231a6a3e26f3c68485a10797b63e9adeff85e6bad6049ee4120aca253636c291",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/providers/bedrock.py",
+      "original_sha256": "9ed938044d71cb5da535eac0702339c6051ab7a8202ac1f96b1acbb1780cdeee",
+      "public_path": "original-runtime/packages/llm/src/llm/providers/bedrock.py",
+      "public_sha256": "9ed938044d71cb5da535eac0702339c6051ab7a8202ac1f96b1acbb1780cdeee",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/providers/fallback.py",
+      "original_sha256": "4f63046b31c6f893bb807dc9766e02068b653b8be6bb026c0da32eba183b7042",
+      "public_path": "original-runtime/packages/llm/src/llm/providers/fallback.py",
+      "public_sha256": "4f63046b31c6f893bb807dc9766e02068b653b8be6bb026c0da32eba183b7042",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/providers/gemini.py",
+      "original_sha256": "8f080fff2aaac6d43e811a355bf47e9bf0abf46aea7675b6859912ee04877329",
+      "public_path": "original-runtime/packages/llm/src/llm/providers/gemini.py",
+      "public_sha256": "8f080fff2aaac6d43e811a355bf47e9bf0abf46aea7675b6859912ee04877329",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/providers/litellm_proxy.py",
+      "original_sha256": "46822a1194d1b009374135cec45a1741480f7f02ee0d6a228d7081e26c4e7914",
+      "public_path": "original-runtime/packages/llm/src/llm/providers/litellm_proxy.py",
+      "public_sha256": "46822a1194d1b009374135cec45a1741480f7f02ee0d6a228d7081e26c4e7914",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/py.typed",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "original-runtime/packages/llm/src/llm/py.typed",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/stream.py",
+      "original_sha256": "b8f11a95a8479751c054b0e839458a64aa612a1da83fdac04f450bde64eb3c0e",
+      "public_path": "original-runtime/packages/llm/src/llm/stream.py",
+      "public_sha256": "b8f11a95a8479751c054b0e839458a64aa612a1da83fdac04f450bde64eb3c0e",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/structured.py",
+      "original_sha256": "1b47199a8cca51e67b1924694ac3331c8217d0b2d0f9936af3fb563f0e2cea76",
+      "public_path": "original-runtime/packages/llm/src/llm/structured.py",
+      "public_sha256": "1b47199a8cca51e67b1924694ac3331c8217d0b2d0f9936af3fb563f0e2cea76",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/tokens.py",
+      "original_sha256": "4dbf49016ddd6e92741ca0f9f83857d80a5f20ae87e22f3ba39a6b4313fdb22b",
+      "public_path": "original-runtime/packages/llm/src/llm/tokens.py",
+      "public_sha256": "4dbf49016ddd6e92741ca0f9f83857d80a5f20ae87e22f3ba39a6b4313fdb22b",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/usage.py",
+      "original_sha256": "cbe2cd9f52ea5859809f9edba55d15746e6dcc113174dce34174bc2a124b599c",
+      "public_path": "original-runtime/packages/llm/src/llm/usage.py",
+      "public_sha256": "cbe2cd9f52ea5859809f9edba55d15746e6dcc113174dce34174bc2a124b599c",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/llm/src/llm/vision.py",
+      "original_sha256": "3ca167d35f10a543abc05163f9f9d664ae67b1c4c821225ab701c2d9c54a9b26",
+      "public_path": "original-runtime/packages/llm/src/llm/vision.py",
+      "public_sha256": "3ca167d35f10a543abc05163f9f9d664ae67b1c4c821225ab701c2d9c54a9b26",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/storage/README.md",
+      "original_sha256": "15d38e6396a0b68512e4f123ca7d7cb40b83a81435e8907e21f02ea860db491e",
+      "public_path": "original-runtime/packages/storage/README.md",
+      "public_sha256": "30455d5ba78a612cf17044fd5146ce7f17f7b74a95199bb33b2dd776de20762d",
+      "status": "adapted",
+      "adaptation": "Label retained implementation record and retain unbundled internal references as inline paths; link to current public setup."
+    },
+    {
+      "original_path": "packages/storage/pyproject.toml",
+      "original_sha256": "b99a0cd631d21fbfcb6455a08c79a5bca0751672673fb0bbdd2ad1e731cf88a7",
+      "public_path": "original-runtime/packages/storage/pyproject.toml",
+      "public_sha256": "b99a0cd631d21fbfcb6455a08c79a5bca0751672673fb0bbdd2ad1e731cf88a7",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/storage/src/storage/__init__.py",
+      "original_sha256": "5c3d72003e66b37dce2895606d7bcea829c49fa8316b814b3de0eea705673de4",
+      "public_path": "original-runtime/packages/storage/src/storage/__init__.py",
+      "public_sha256": "5c3d72003e66b37dce2895606d7bcea829c49fa8316b814b3de0eea705673de4",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/storage/src/storage/embeddings.py",
+      "original_sha256": "cd2dbd341ef734f86bae5cd3591a29cef484491e442e5e599c43d5b92a7230ab",
+      "public_path": "original-runtime/packages/storage/src/storage/embeddings.py",
+      "public_sha256": "cd2dbd341ef734f86bae5cd3591a29cef484491e442e5e599c43d5b92a7230ab",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/storage/src/storage/py.typed",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "original-runtime/packages/storage/src/storage/py.typed",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/storage/src/storage/semantic.py",
+      "original_sha256": "26a51f276bb388caac3aaef96d53ec9d1c3c514d51a51d670974ff5f1c0c8a77",
+      "public_path": "original-runtime/packages/storage/src/storage/semantic.py",
+      "public_sha256": "26a51f276bb388caac3aaef96d53ec9d1c3c514d51a51d670974ff5f1c0c8a77",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/storage/src/storage/types.py",
+      "original_sha256": "436736aaf995c5112ff1f25dbdb00404a3a55a60b22ab08f2da05b61fc88d4bb",
+      "public_path": "original-runtime/packages/storage/src/storage/types.py",
+      "public_sha256": "436736aaf995c5112ff1f25dbdb00404a3a55a60b22ab08f2da05b61fc88d4bb",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/README.md",
+      "original_sha256": "145c27bb42c5b2422e69fc6d8c38ae31ae4d5136a582af1cfb1daabcc3995ab7",
+      "public_path": "original-runtime/packages/voice/README.md",
+      "public_sha256": "145c27bb42c5b2422e69fc6d8c38ae31ae4d5136a582af1cfb1daabcc3995ab7",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/pyproject.toml",
+      "original_sha256": "142aa56007d7d3e46b46c8639a545db3060faed8efbade9648d01fda743fd00c",
+      "public_path": "original-runtime/packages/voice/pyproject.toml",
+      "public_sha256": "142aa56007d7d3e46b46c8639a545db3060faed8efbade9648d01fda743fd00c",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/__init__.py",
+      "original_sha256": "673170c0589118a6370f2f35aa18ed9c9d634c5307ea4e70af4e1043c3161b86",
+      "public_path": "original-runtime/packages/voice/src/voice/__init__.py",
+      "public_sha256": "673170c0589118a6370f2f35aa18ed9c9d634c5307ea4e70af4e1043c3161b86",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/audio.py",
+      "original_sha256": "d2e63d226862b4de1c156c1c82ba9807331e17d83e3bae590890a79de0f790ce",
+      "public_path": "original-runtime/packages/voice/src/voice/audio.py",
+      "public_sha256": "d2e63d226862b4de1c156c1c82ba9807331e17d83e3bae590890a79de0f790ce",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/config.py",
+      "original_sha256": "4436df480f2ecb2aa41b165acec7b0cc5a62dc498a8023f193831ad58e029204",
+      "public_path": "original-runtime/packages/voice/src/voice/config.py",
+      "public_sha256": "4436df480f2ecb2aa41b165acec7b0cc5a62dc498a8023f193831ad58e029204",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/detect.py",
+      "original_sha256": "523aa6a390a55fc32825d71b23deb7985720fea7778c06c06dc59674d1b60ab4",
+      "public_path": "original-runtime/packages/voice/src/voice/detect.py",
+      "public_sha256": "523aa6a390a55fc32825d71b23deb7985720fea7778c06c06dc59674d1b60ab4",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/logging.py",
+      "original_sha256": "b48d64767c739fcc5c0c454ea75592464a9a06cdf07813d84b884121c984d090",
+      "public_path": "original-runtime/packages/voice/src/voice/logging.py",
+      "public_sha256": "b48d64767c739fcc5c0c454ea75592464a9a06cdf07813d84b884121c984d090",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/pipeline.py",
+      "original_sha256": "d23259ad85ae9098e00ffce6e634f293af33b582e037216ee2bfb0df79f5004e",
+      "public_path": "original-runtime/packages/voice/src/voice/pipeline.py",
+      "public_sha256": "d23259ad85ae9098e00ffce6e634f293af33b582e037216ee2bfb0df79f5004e",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/polish.py",
+      "original_sha256": "fd2d152974d058e87e092e34274ad57336cf057e73d00cfaad225f6119e62233",
+      "public_path": "original-runtime/packages/voice/src/voice/polish.py",
+      "public_sha256": "fd2d152974d058e87e092e34274ad57336cf057e73d00cfaad225f6119e62233",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/py.typed",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "original-runtime/packages/voice/src/voice/py.typed",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/resilience.py",
+      "original_sha256": "4ceca5753ca0370b55c5660dfee5fa5e392b23b2487fdd057429210807005ddf",
+      "public_path": "original-runtime/packages/voice/src/voice/resilience.py",
+      "public_sha256": "4ceca5753ca0370b55c5660dfee5fa5e392b23b2487fdd057429210807005ddf",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/stream/__init__.py",
+      "original_sha256": "20de74fe0d18483965dec0e584b4d14d6b0b066de852caee03a3aabce5381ee0",
+      "public_path": "original-runtime/packages/voice/src/voice/stream/__init__.py",
+      "public_sha256": "20de74fe0d18483965dec0e584b4d14d6b0b066de852caee03a3aabce5381ee0",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/stt/__init__.py",
+      "original_sha256": "9dca14ef0374eacb36df83bd7a99f71dcdad83c4f3e5663ea6c873b452241d92",
+      "public_path": "original-runtime/packages/voice/src/voice/stt/__init__.py",
+      "public_sha256": "9dca14ef0374eacb36df83bd7a99f71dcdad83c4f3e5663ea6c873b452241d92",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/stt/deepgram.py",
+      "original_sha256": "1be6ad6be8f5e26ab46f659dd05fe48426a4d0218e5a4e99daced890bbfb1212",
+      "public_path": "original-runtime/packages/voice/src/voice/stt/deepgram.py",
+      "public_sha256": "1be6ad6be8f5e26ab46f659dd05fe48426a4d0218e5a4e99daced890bbfb1212",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/stt/groq.py",
+      "original_sha256": "d66a3b75496a38a4ca24760ffa7a0cb107430d1e1ea13ac77ca699fbb4492066",
+      "public_path": "original-runtime/packages/voice/src/voice/stt/groq.py",
+      "public_sha256": "d66a3b75496a38a4ca24760ffa7a0cb107430d1e1ea13ac77ca699fbb4492066",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/stt/huggingface.py",
+      "original_sha256": "3fc0f25681b4e94f567a12b9381fa5d244d240fecc1869876b6b8871d865e0f1",
+      "public_path": "original-runtime/packages/voice/src/voice/stt/huggingface.py",
+      "public_sha256": "3fc0f25681b4e94f567a12b9381fa5d244d240fecc1869876b6b8871d865e0f1",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/stt/local.py",
+      "original_sha256": "8e7801a088e7f9a820428c714e66a24b4af903a7fb0dc0e575dbceaa37c5866f",
+      "public_path": "original-runtime/packages/voice/src/voice/stt/local.py",
+      "public_sha256": "8e7801a088e7f9a820428c714e66a24b4af903a7fb0dc0e575dbceaa37c5866f",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/tts/__init__.py",
+      "original_sha256": "2711a36b80da88a5895fa6c0192632efc248827e19bd5ce883f202a0efa2da22",
+      "public_path": "original-runtime/packages/voice/src/voice/tts/__init__.py",
+      "public_sha256": "2711a36b80da88a5895fa6c0192632efc248827e19bd5ce883f202a0efa2da22",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/tts/elevenlabs.py",
+      "original_sha256": "800f22c82cfc268ba45511b2a57a4e2b4c39fdb95c50f37e17bd7c409e267da5",
+      "public_path": "original-runtime/packages/voice/src/voice/tts/elevenlabs.py",
+      "public_sha256": "800f22c82cfc268ba45511b2a57a4e2b4c39fdb95c50f37e17bd7c409e267da5",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/tts/polly.py",
+      "original_sha256": "3f269795507bbc68621208446bee7e2428f0bccac362b320e81006f0d5f0e56a",
+      "public_path": "original-runtime/packages/voice/src/voice/tts/polly.py",
+      "public_sha256": "3f269795507bbc68621208446bee7e2428f0bccac362b320e81006f0d5f0e56a",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/tts/voices.py",
+      "original_sha256": "3739fb29cf9f579a4bbd30939b715c67a791ca3a58508451362916b60c5e75b1",
+      "public_path": "original-runtime/packages/voice/src/voice/tts/voices.py",
+      "public_sha256": "3739fb29cf9f579a4bbd30939b715c67a791ca3a58508451362916b60c5e75b1",
+      "status": "unchanged",
+      "adaptation": null
+    },
+    {
+      "original_path": "packages/voice/src/voice/types.py",
+      "original_sha256": "bc21dbdff598a64165d6a4d26e203226fb0a3a0bf45cd5d8db48c142e4d55874",
+      "public_path": "original-runtime/packages/voice/src/voice/types.py",
+      "public_sha256": "bc21dbdff598a64165d6a4d26e203226fb0a3a0bf45cd5d8db48c142e4d55874",
+      "status": "unchanged",
+      "adaptation": null
+    }
+  ],
+  "omitted_categories": [
+    "environment/provider configuration",
+    "inbox/conversation/customer data",
+    "downloaded videos/catalog/feed data",
+    "account/runtime state",
+    "private Git history"
+  ],
+  "original_code_license": "MIT, authorized by Peter Neyra for this public source release; external dependencies retain their own terms"
+}
